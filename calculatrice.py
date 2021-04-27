@@ -21,7 +21,7 @@ def multplication(number):
         number = ask_user("Saisir un chiffre à multiplier ou clicker sur '=' ")
         
     ##### REFACTORISATION NUMPY // Remplace toute la boucle for #####
-    #result = np.prod(np.array(list_numbers)) 
+    #result = np.prod(list_numbers) 
     
     for index, list_number in enumerate(list_numbers): # refactoriser
         if list_number == 0: # do_something OK
@@ -36,7 +36,7 @@ def division(number):
         if number.isdigit():
             list_numbers.append(int(number)) # do_something OK
         number = ask_user("Saisir un chiffre à diviser ou clicker sur '=' ")
-        
+         
     for index, list_number in enumerate(list_numbers): # refactoriser OK
         if index == 0:
             result = list_number
@@ -51,11 +51,12 @@ def soustraction(number):
             list_numbers.append(int(number)) # do_something OK
         number = ask_user("Saisir un chiffre à soustraire ou clicker sur '=' ")
     i = 0
+    
     for list_number in list_numbers:
         if i == 0:
             result = list_number
         else:
-            result = result - list_number
+            result -= list_number
         i = i + 1
     return result
 
