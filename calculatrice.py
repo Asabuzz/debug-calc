@@ -20,10 +20,11 @@ def multplication(number):
             list_numbers.append(int(number)) # do_something OK
         number = ask_user("Saisir un chiffre à multiplier ou clicker sur '=' ")
         
-    #result = np.prod(np.array(list_numbers)) #Refactorisation avec numpy
+    ##### REFACTORISATION NUMPY // Remplace toute la boucle for #####
+    #result = np.prod(np.array(list_numbers)) 
     
-    for list_number, index in zip(list_numbers,list(range(len(list_numbers)))): # refactoriser
-        if index == 0: # do_something OK
+    for index, list_number in enumerate(list_numbers): # refactoriser
+        if list_number == 0: # do_something OK
             result = list_number
         else:
             result *= list_number # do_something Ok
@@ -36,9 +37,7 @@ def division(number):
             list_numbers.append(int(number)) # do_something OK
         number = ask_user("Saisir un chiffre à diviser ou clicker sur '=' ")
         
-   
-    
-    for list_number, index in zip(list_numbers,list(range(len(list_numbers)))): # refactoriser
+    for index, list_number in enumerate(list_numbers): # refactoriser OK
         if index == 0:
             result = list_number
         else:
