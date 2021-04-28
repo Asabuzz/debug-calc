@@ -7,27 +7,25 @@ def ask_user(sentence): # do_something OK
 def values(number):
     list_numbers = []
     while number.isdigit():
-        if number.isdigit():
-            list_numbers.append(int(number))
+        list_numbers.append(int(number))
         number = ask_user("Saisir un chiffre à additionner ou clicker sur '=' ")
     return list_numbers
 
-def addition(number): # do_something OK
+def addition(list_numbers): # do_something OK
     result = sum(list_numbers) # do_something OK
     return result
 
-def multplication(number):    
-    ##### REFACTORISATION NUMPY // Remplace toute la boucle for #####
-    #result = np.prod(list_numbers) 
-    
+def multplication(list_numbers):    
+    # #### REFACTORISATION NUMPY // Remplace toute la boucle for #####
+    # result = np.prod(list_numbers) 
     for index, list_number in enumerate(list_numbers): # refactoriser OK
-        if list_number == 0: # do_something OK
+        if index == 0:
             result = list_number
         else:
-            result *= list_number # do_something Ok
+            result *= list_number # do_something OK
     return result
 
-def division(number):
+def division(list_numbers):
     for index, list_number in enumerate(list_numbers): # refactoriser OK
         if index == 0:
             result = list_number
@@ -35,7 +33,7 @@ def division(number):
             result /= list_number # do_something OK
     return result
 
-def soustraction(number):
+def soustraction(list_numbers):
     i = 0
     for list_number in list_numbers:
         if i == 0:
@@ -57,22 +55,21 @@ def display_interface():
         if choice < 5 :
             if choice == 1:
                 number = ask_user("Saisir un chiffre à ADDITIONNER ou clicker sur '=' ")
-                list_number = values(number)
-                result = addition(choice)
+                list_numbers = values(number)
+                result = addition(list_numbers)
             elif choice == 2:
                 number = ask_user("Saisir un chiffre à SOUSTRAIRE ou clicker sur '=' ")
-                list_number = values(number)
-                result = soustraction(choice)
+                list_numbers = values(number)
+                result = soustraction(list_numbers)
             elif choice == 3:
                 number = ask_user("Saisir un chiffre à MULTIPLIER ou clicker sur '=' ")
-                list_number = values(number)
-                result = multplication(choice)
+                list_numbers = values(number)
+                result = multplication(list_numbers)
             elif choice == 4:
                 number = ask_user("Saisir un chiffre à DIVISER ou clicker sur '=' ")
-                list_number = values(number)
-                result = division(choice)
+                list_numbers = values(number)
+                result = division(list_numbers)
             message = f"Le resultat est ==> {result}"
-            
         else:
             message = "A bientôt !"
         
