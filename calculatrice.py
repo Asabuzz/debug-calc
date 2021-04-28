@@ -1,4 +1,4 @@
-#import numpy as np
+import numpy as np
 
 def ask_user(sentence): # do_something OK
     choice = input(f"""{sentence}\n>""")
@@ -18,17 +18,17 @@ def multplication(number):
     while number.isdigit():
         if number.isdigit():
             list_numbers.append(int(number)) # do_something OK
-        number = ask_user("Saisir un chiffre à multiplier ou clicker sur '=' ")
+        number = ask_user("Saisir un chiffre à diviser ou clicker sur '=' ")
         
-    ##### REFACTORISATION NUMPY // Remplace toute la boucle for #####
-    #result = np.prod(list_numbers) 
-    
-    for index, list_number in enumerate(list_numbers): # refactoriser OK
-        if list_number == 0: # do_something OK
-            result = list_number
-        else:
-            result *= list_number # do_something Ok
+    result = np.prod(list_numbers)
+         
+    # for index, list_number in enumerate(list_numbers): # refactoriser OK
+    #     if index == 0:
+    #         result = list_number
+    #     else:
+    #         result *= list_number # do_something OK
     return result
+
 
 def division(number):
     list_numbers = []
